@@ -13,8 +13,21 @@ body {
 }
 
 #search-box {
+  display: block;
   font: inherit;
   padding: 8px;
   max-width: 320px;
-  margin-bottom: 16px;
+  margin: 0px auto 16px auto;
+  border-radius: 4px;
+}
+
+.flag{
+  border:1px black solid;
+  width: 30px;
+  height: 20px;
+  border-radius: 2px;
+}
+
+li {
+  list-style: none;
 }
