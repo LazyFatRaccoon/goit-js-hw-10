@@ -21,8 +21,7 @@ refs.input.addEventListener('input', debounce(DEBOUNCE_DELAY,onSearch))
 
 function onSearch(e) {
     let name = refs.input.value.trim()
-    refs.countryCard.innerHTML='';
-    refs.countryList.innerHTML='';
+    clearElements()
 
     // console.log(name)
     if (name==='') return
@@ -31,15 +30,25 @@ function onSearch(e) {
         if (data.length===1) {
             // console.log(data[0]);
             // console.log(Object.values(data[0].languages).toString());
+            refs.countryCard.classList.add('border')
             refs.countryCard.insertAdjacentHTML('beforeend', singleMarkUp(data[0]))}
         if (data.length>1 && data.length<=10) {
+            refs.countryList.classList.add('border')
             // console.log(`list found of ${data.length} elements`)
+            let listOfTheCountriesMarkUp = ''
             for (let i=0;i<data.length;i++) {
-                refs.countryList.insertAdjacentHTML('beforeend', listMarkUp(data[i]))
+                listOfTheCountriesMarkUp += listMarkUp(data[i])
             }
+            refs.countryList.insertAdjacentHTML('beforeend', listOfTheCountriesMarkUp)
         }
         if (data.length>10) Notify.info('Too many matches found. Please enter a more specific name.')
     }).catch(error => Notify.failure(`Oops, there is no country with that name`))
 }   
 
 
+function clearElements() {
+    refs.countryCard.innerHTML='';
+    refs.countryList.innerHTML='';
+    refs.countryCard.classList.remove('border')
+    refs.countryList.classList.remove('border')
+}

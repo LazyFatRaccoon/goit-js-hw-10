@@ -1,21 +1,21 @@
 export function singleMarkUp(data) {
-    return `<div>
-    <img src="${data.flags.svg}" width="60px" height="40px">
+    return `<div class="countryInfo_header_container">
+    <img src="${data.flags.svg}" class="flag_single">
     <h2 style="display:inline;"> 
         ${data.name.official}
     </h2>
 </div>
 <ul>
     <li>
-        <span>Capital:</span>
+        <span class="countryInfo_headers">Capital:</span>
         <span>${data.capital}</span>
     </li>
     <li>
-        <span>Population:</span>
+        <span class="countryInfo_headers">Population:</span>
         <span>${convertToInternationalCurrencySystem(data.population)}</span>
     </li>
     <li>
-        <span>Languages:</span>
+        <span class="countryInfo_headers">Languages:</span>
         <span>${Object.values(data.languages).toString().split(',').join(', ')}</span>
     </li>
 </ul>`
@@ -23,7 +23,7 @@ export function singleMarkUp(data) {
 
 export function listMarkUp(data) {
     return `<li>
-    <img src="${data.flags.svg}" class="flag">
+    <img src="${data.flags.svg}" class="flag_in_list">
     <h2 style="display:inline;"> 
         ${data.name.official}
     </h2>
