@@ -28,13 +28,13 @@ body {
 .flag_in_list{
   border:1px black solid;
   width: 30px;
-  height: 20px;
+  /* height: 20px; */
   border-radius: 2px;
 }
 .flag_single{
   border:1px black solid;
   width: 60px;
-  height: 40px;
+  /* height: 40px; */
   border-radius: 2px;
 }
 
@@ -63,9 +63,20 @@ li {
 
 }
 
+.country-list{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.list{
+  display:flex;
+  align-items:baseline;
+  gap: 10px;
+}
 
 .border {
-  display: inline-block;
+  /* display: inline-block; */
   border: 3px tomato dashed;
   margin: auto auto;
   max-width: 30%;

@@ -27,6 +27,7 @@ function onSearch(e) {
     if (name==='') return
 
     fetchCountries(name).then(data=>{
+        console.log(data)
         if (data.length===1) {
             // console.log(data[0]);
             // console.log(Object.values(data[0].languages).toString());

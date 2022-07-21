@@ -2,7 +2,7 @@ export function singleMarkUp(data) {
     return `<div class="countryInfo_header_container">
     <img src="${data.flags.svg}" class="flag_single">
     <h2 style="display:inline;"> 
-        ${data.name.official}
+        ${data.name.common}
     </h2>
 </div>
 <ul>
@@ -22,10 +22,10 @@ export function singleMarkUp(data) {
 }
 
 export function listMarkUp(data) {
-    return `<li>
+    return `<li class='list'>
     <img src="${data.flags.svg}" class="flag_in_list">
     <h2 style="display:inline;"> 
-        ${data.name.official}
+        ${data.name.common}
     </h2>
 </li>`}
 
